@@ -32,5 +32,12 @@ public class StudentController {
         return ResponseEntity.noContent().build();
     }
 
+    @PutMapping("/update/{id}")
+    public void updateStudentController(@PathVariable("id") Long id,
+                                        @RequestParam(required = false) String name,
+                                        @RequestParam(required = false) String email){
+        studentService.updateStudent(id, name, email);
+    }
+
 
 }
